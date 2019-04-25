@@ -1,0 +1,17 @@
+{
+  "name": "litelement-simple",
+  "version": "0.1.0",
+  "description": "",
+  "license": "BSD-3-Clause",
+  "main": "index.html",
+  "scripts": {
+    "start": "polymer serve -H 0.0.0.0"
+  },
+  "dependencies": {
+    "lit-element": "^2.1.0"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "polymer-cli": "^1.9.8"
+  }
+}
