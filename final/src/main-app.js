@@ -1,5 +1,5 @@
 // @ts-check
-import { LitElement, html, css } from "lit-element";
+import { LitElement, html, css, supportsAdoptingStyleSheets } from "lit-element";
 
 import './components/todo-list';
 
@@ -54,13 +54,23 @@ export class MainApp extends LitElement {
   constructor() {
     super();
 
-    // Register Service Worker and listen for updates available.
     this.updateAvailable = false;
-    ServiceWorkerReg.addEventListener('update-available', () => {
-      this.updateAvailable = true;
-      console.log('Update available');
-    });
+    this.updateIsAvailable = this.updateIsAvailable.bind(this);    
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    ServiceWorkerReg.addEventListener('update-available', this.updateIsAvailable);
     ServiceWorkerReg.register();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+    ServiceWorkerReg.removeEventListener('update-available', this.updateIsAvailable);
+  }
+
+  updateIsAvailable() {
+    this.updateAvailable = true;
   }
 
   render() {
