@@ -37,48 +37,18 @@ class TodoList extends LitElement {
         this.storeList();
     }
     
-    _onTodoItemChecked(ev) {
-        const item = this.list[ev.detail];
-        this.list[ev.detail] = Object.assign({}, item, { checked: !item.checked });
-        this.storeList();
-        this.requestUpdate();
-    }
-    
-    _onTodoItemRemoved(ev) {
-        this.list = [...this.list.slice(0, ev.detail), ...this.list.slice(ev.detail + 1)];
-        this.storeList();
-    }
+    // Implement event handler functions to be called on 'removed' and 'checked' custom events
     
     static get styles() {
         return [css`
             :host {
                 display: block;
             }
-            
-            h1 {
-                font-size: 100px;
-                font-weight: 100;
-                text-align: center;
-                color: rgba(175, 47, 47, 0.15);
-            }
-            
-            section {
-                background: #fff;
-                margin: 130px 0 40px 0;
-                position: relative;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
-            }
-            
-            #list-container {
-                margin: 0;
-                padding: 0;
-                list-style: none;
-                border-top: 1px solid #e6e6e6;
-            }
         `];
     }
     
     render() {
+        // Add event handlers for 'removed' and 'checked' listening for custom events from todo-item
         return html`
             <div>
                 <h1>Lit Todos</h1>
@@ -90,8 +60,6 @@ class TodoList extends LitElement {
                             .checked=${item.checked}
                             text=${item.text}
                             .index=${index}
-                            @removed=${this._onTodoItemRemoved}
-                            @checked=${this._onTodoItemChecked}
                         ></todo-item>
                     `)}
                     </ul>

@@ -26,3 +26,7 @@ Building for production:
 $ npm run build
 ```
 
+## Workshop tasks
+
+* Trigger Custom Event to remove a to do item
+* Change to do item state (done <-> not done)
