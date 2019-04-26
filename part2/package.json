@@ -1,0 +1,34 @@
+{
+  "name": "litelement-todo",
+  "version": "0.1.0",
+  "description": "",
+  "license": "BSD-3-Clause",
+  "main": "index.html",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "dev": "npm-run-all --parallel start watch",
+    "start": "serve build"
+  },
+  "dependencies": {
+    "lit-element": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^1.10.1",
+    "rollup-plugin-babel": "^4.3.0",
+    "rollup-plugin-cleaner": "^0.2.0",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-copy-assets": "^1.1.0",
+    "rollup-plugin-copy-assets-to": "^1.0.0",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-terser": "^4.0.4",
+    "serve": "^10.1.1"
+  }
+}
