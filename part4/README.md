@@ -11,6 +11,7 @@ LitElement ( https://lit-element.polymer-project.org/ ) based TODO list.
 
 ```
 $ git clone https://github.com/larsgk/litelement-todo
+$ cd part4
 $ npm install
 ```
 
