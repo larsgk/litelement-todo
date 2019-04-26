@@ -29,5 +29,6 @@ $ npm run build
 
 ## Workshop tasks
 
-* Trigger Custom Event to remove a to do item
-* Change to do item state (done <-> not done)
+* Integrate local storage to store our to do items
+* List single to do items in a list
+
